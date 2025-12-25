@@ -1,0 +1,101 @@
+Sample_ID,State,District,Location,Latitude,Longitude,Sample_Date,Well_Depth_M,Well_Type,pH_pH_units,pH_Exceeds_Limit,EC_µS_cm,EC_Exceeds_Limit,TDS_mg_L,TDS_Exceeds_Limit,Hardness_mg_L_as_CaCO3,Hardness_Exceeds_Limit,Chloride_mg_L,Chloride_Exceeds_Limit,Nitrate_mg_L,Nitrate_Exceeds_Limit,Fluoride_mg_L,Fluoride_Exceeds_Limit,Iron_mg_L,Iron_Exceeds_Limit,Arsenic_mg_L,Arsenic_Exceeds_Limit
+WQ_5001,Uttar Pradesh,District_C,Village_14,27.914869,71.763432,2024-11-17,39.8,Bore Well,7.19,No,2972.0,No,2762.0,Yes,345.9,No,113.0,No,34.86,No,0.65,No,1.307,Yes,0.0068,No
+WQ_5002,Telangana,District_C,Village_2,15.838599,78.90347,2024-12-25,35.0,Tube Well,7.65,No,662.0,No,2831.0,Yes,268.2,No,1385.3,Yes,32.65,No,2.37,Yes,0.5,No,0.1343,Yes
+WQ_5003,Andhra Pradesh,District_B,Village_42,16.474324,78.183183,2025-04-04,70.6,Bore Well,7.77,No,2924.0,No,244.0,No,236.8,No,862.0,No,1.93,No,0.83,No,0.466,No,0.0507,Yes
+WQ_5004,Rajasthan,District_C,Village_26,20.71219,79.639207,2025-04-06,91.8,Bore Well,7.16,No,4640.0,Yes,1973.0,No,734.5,Yes,1251.9,Yes,68.79,Yes,1.13,No,0.49,No,0.0453,No
+WQ_5005,Maharashtra,District_C,Village_4,29.043477,87.171477,2025-06-17,75.2,Bore Well,8.65,Yes,4603.0,Yes,1559.0,No,521.8,No,633.9,No,41.91,No,0.21,No,0.873,No,0.135,Yes
+WQ_5006,Madhya Pradesh,District_B,Village_30,18.439643,85.448194,2025-05-24,39.9,Bore Well,6.4,Yes,4077.0,Yes,2038.0,Yes,231.4,No,809.3,No,40.25,No,2.82,Yes,1.219,Yes,0.0325,No
+WQ_5007,Telangana,District_A,Village_21,20.042969,85.251137,2025-03-26,70.4,Tube Well,8.53,Yes,1327.0,No,2671.0,Yes,616.7,Yes,1096.1,Yes,34.72,No,2.67,Yes,1.28,Yes,0.1705,Yes
+WQ_5008,Tamil Nadu,District_B,Village_9,17.219429,70.913042,2025-02-28,39.9,Tube Well,7.37,No,2714.0,No,1557.0,No,459.5,No,1264.1,Yes,17.09,No,1.02,No,1.778,Yes,0.1125,Yes
+WQ_5009,Andhra Pradesh,District_A,Village_21,21.667797,77.561251,2025-05-05,59.4,Bore Well,6.59,No,2780.0,No,2992.0,Yes,474.5,No,76.2,No,79.66,Yes,1.25,No,0.316,No,0.1726,Yes
+WQ_5010,Maharashtra,District_B,Village_29,13.959465,86.415348,2025-05-02,49.8,Dug Well,8.23,No,2780.0,No,807.0,No,553.3,No,1437.3,Yes,76.99,Yes,1.85,Yes,1.981,Yes,0.0538,Yes
+WQ_5011,Maharashtra,District_A,Village_19,11.24683,68.642617,2025-02-21,74.0,Tube Well,8.49,No,3212.0,Yes,2720.0,Yes,573.5,No,562.7,No,18.21,No,2.78,Yes,0.216,No,0.1091,Yes
+WQ_5012,Madhya Pradesh,District_A,Village_11,16.280159,73.4283,2025-03-22,68.1,Tube Well,6.69,No,4590.0,Yes,1248.0,No,558.0,No,1094.4,Yes,68.33,Yes,2.72,Yes,0.47,No,0.0181,No
+WQ_5013,Tamil Nadu,District_A,Village_49,11.109314,85.556883,2025-06-16,97.6,Bore Well,6.91,No,3498.0,Yes,76.0,No,191.5,No,1037.0,Yes,6.68,No,1.46,No,1.329,Yes,0.1534,Yes
+WQ_5014,Andhra Pradesh,District_B,Village_32,19.076318,80.605681,2025-04-01,58.6,Bore Well,6.16,Yes,3740.0,Yes,558.0,No,73.9,No,682.2,No,86.58,Yes,0.54,No,0.036,No,0.0229,No
+WQ_5015,Karnataka,District_A,Village_26,17.273182,79.603437,2024-12-21,27.4,Bore Well,8.41,No,3791.0,Yes,2103.0,Yes,415.6,No,554.2,No,37.62,No,1.56,Yes,0.164,No,0.1368,Yes
+WQ_5016,Rajasthan,District_A,Village_38,17.030151,72.495176,2025-03-09,35.0,Dug Well,6.54,No,4518.0,Yes,549.0,No,712.2,Yes,862.6,No,86.76,Yes,1.47,No,1.856,Yes,0.0431,No
+WQ_5017,Karnataka,District_B,Village_32,21.093835,70.516774,2024-11-04,50.2,Tube Well,7.71,No,3068.0,Yes,1128.0,No,107.3,No,986.4,No,48.89,Yes,0.5,No,1.872,Yes,0.1912,Yes
+WQ_5018,West Bengal,District_B,Village_35,27.132126,84.877366,2025-09-01,18.9,Dug Well,8.98,Yes,2062.0,No,531.0,No,659.1,Yes,346.3,No,52.66,Yes,0.47,No,0.955,No,0.1121,Yes
+WQ_5019,Madhya Pradesh,District_A,Village_17,18.918479,69.389736,2025-03-02,53.6,Bore Well,7.41,No,1382.0,No,2769.0,Yes,363.3,No,1297.5,Yes,11.06,No,1.02,No,0.361,No,0.0823,Yes
+WQ_5020,Tamil Nadu,District_A,Village_26,12.232734,76.820696,2025-08-10,41.8,Tube Well,6.67,No,3247.0,Yes,2855.0,Yes,205.3,No,1070.6,Yes,74.26,Yes,1.54,Yes,1.796,Yes,0.1933,Yes
+WQ_5021,Andhra Pradesh,District_A,Village_24,17.244929,81.020666,2024-11-26,69.6,Bore Well,7.21,No,1652.0,No,2805.0,Yes,642.5,Yes,180.6,No,12.08,No,2.78,Yes,0.172,No,0.138,Yes
+WQ_5022,Maharashtra,District_B,Village_33,14.535165,68.703707,2025-01-18,15.4,Tube Well,7.12,No,480.0,No,1810.0,No,535.4,No,566.5,No,74.31,Yes,1.52,Yes,0.866,No,0.082,Yes
+WQ_5023,Uttar Pradesh,District_C,Village_44,18.62213,87.357753,2024-10-28,71.3,Dug Well,6.95,No,3696.0,Yes,1024.0,No,144.3,No,718.3,No,75.13,Yes,1.2,No,1.74,Yes,0.078,Yes
+WQ_5024,Gujarat,District_A,Village_26,16.996781,87.964878,2025-02-26,53.4,Bore Well,8.42,No,4044.0,Yes,2783.0,Yes,113.7,No,414.1,No,76.8,Yes,1.73,Yes,1.124,Yes,0.0341,No
+WQ_5025,Andhra Pradesh,District_B,Village_49,15.62306,78.426682,2025-06-24,34.9,Dug Well,6.63,No,530.0,No,509.0,No,626.7,Yes,1081.0,Yes,4.68,No,0.69,No,1.125,Yes,0.0652,Yes
+WQ_5026,Telangana,District_C,Village_26,26.464992,83.699786,2024-12-23,90.2,Dug Well,7.69,No,1825.0,No,1838.0,No,116.9,No,24.3,No,1.81,No,1.28,No,0.464,No,0.0323,No
+WQ_5027,Karnataka,District_A,Village_9,22.30652,87.901901,2025-03-19,26.0,Bore Well,7.64,No,687.0,No,2806.0,Yes,268.8,No,1318.7,Yes,28.38,No,2.44,Yes,0.427,No,0.0593,Yes
+WQ_5028,Andhra Pradesh,District_B,Village_10,13.849507,73.285198,2024-10-30,85.1,Tube Well,7.92,No,2089.0,No,2916.0,Yes,398.6,No,1454.9,Yes,19.74,No,2.72,Yes,0.038,No,0.1095,Yes
+WQ_5029,Gujarat,District_B,Village_40,18.461048,78.501757,2025-03-26,59.8,Dug Well,7.17,No,4991.0,Yes,2931.0,Yes,771.3,Yes,1468.8,Yes,79.32,Yes,2.97,Yes,1.786,Yes,0.0838,Yes
+WQ_5030,Madhya Pradesh,District_C,Village_48,25.695542,86.241357,2025-04-05,74.1,Tube Well,7.27,No,422.0,No,2439.0,Yes,764.6,Yes,550.1,No,15.28,No,1.05,No,1.169,Yes,0.0641,Yes
+WQ_5031,Tamil Nadu,District_C,Village_33,22.212375,87.337045,2024-12-07,70.4,Bore Well,7.09,No,4685.0,Yes,1719.0,No,146.3,No,753.5,No,65.4,Yes,2.53,Yes,1.874,Yes,0.0642,Yes
+WQ_5032,Telangana,District_B,Village_31,13.110247,69.476573,2025-08-28,76.5,Bore Well,8.39,No,2106.0,No,1218.0,No,765.7,Yes,1375.9,Yes,23.4,No,2.36,Yes,1.249,Yes,0.0317,No
+WQ_5033,Tamil Nadu,District_C,Village_8,17.135421,71.549459,2025-02-04,36.6,Tube Well,7.85,No,1939.0,No,1212.0,No,454.7,No,140.0,No,73.91,Yes,1.26,No,0.966,No,0.1949,Yes
+WQ_5034,Uttar Pradesh,District_C,Village_45,16.887338,80.964379,2024-10-18,45.3,Dug Well,8.68,Yes,4249.0,Yes,763.0,No,568.8,No,107.1,No,96.32,Yes,1.11,No,1.665,Yes,0.0644,Yes
+WQ_5035,Telangana,District_B,Village_17,22.655415,87.671816,2024-10-05,88.9,Tube Well,6.48,Yes,2783.0,No,1078.0,No,375.8,No,509.4,No,33.66,No,1.67,Yes,0.392,No,0.1079,Yes
+WQ_5036,Telangana,District_A,Village_47,15.579309,73.779658,2025-08-10,76.5,Tube Well,6.09,Yes,1967.0,No,1252.0,No,413.8,No,1006.8,Yes,37.03,No,0.72,No,1.771,Yes,0.1962,Yes
+WQ_5037,West Bengal,District_A,Village_34,10.400294,78.929337,2024-10-18,40.8,Tube Well,6.83,No,1745.0,No,1935.0,No,193.0,No,1370.2,Yes,46.66,Yes,1.04,No,1.533,Yes,0.0043,No
+WQ_5038,Telangana,District_B,Village_10,18.637057,75.106072,2024-09-22,40.4,Dug Well,7.01,No,253.0,No,499.0,No,156.4,No,1483.0,Yes,2.31,No,0.58,No,1.949,Yes,0.126,Yes
+WQ_5039,Karnataka,District_C,Village_45,19.013342,69.575219,2025-07-11,70.3,Dug Well,6.41,Yes,3389.0,Yes,2939.0,Yes,449.0,No,329.0,No,62.57,Yes,1.59,Yes,1.071,Yes,0.0961,Yes
+WQ_5040,Karnataka,District_B,Village_21,23.474811,79.438907,2025-02-03,98.8,Dug Well,8.48,No,1397.0,No,2191.0,Yes,210.7,No,1175.7,Yes,14.84,No,1.47,No,1.583,Yes,0.0567,Yes
+WQ_5041,Madhya Pradesh,District_C,Village_14,26.742383,80.883014,2025-02-07,45.8,Tube Well,7.27,No,4637.0,Yes,692.0,No,570.0,No,1063.9,Yes,92.25,Yes,2.17,Yes,1.173,Yes,0.1806,Yes
+WQ_5042,Telangana,District_B,Village_48,26.582641,82.335529,2025-08-05,12.9,Tube Well,7.12,No,3196.0,Yes,1591.0,No,289.5,No,225.2,No,55.34,Yes,0.93,No,0.474,No,0.0804,Yes
+WQ_5043,Gujarat,District_C,Village_14,25.709829,77.75707,2024-11-22,29.5,Bore Well,6.35,Yes,2545.0,No,2393.0,Yes,539.6,No,355.9,No,43.73,No,2.58,Yes,0.364,No,0.1069,Yes
+WQ_5044,West Bengal,District_C,Village_25,17.12463,70.483595,2025-03-29,14.5,Dug Well,7.67,No,202.0,No,355.0,No,310.7,No,74.8,No,40.1,No,0.48,No,0.706,No,0.1584,Yes
+WQ_5045,West Bengal,District_C,Village_22,22.527287,76.908022,2024-11-30,18.3,Bore Well,7.86,No,902.0,No,276.0,No,548.0,No,1369.0,Yes,46.11,Yes,0.22,No,1.762,Yes,0.0143,No
+WQ_5046,Uttar Pradesh,District_C,Village_31,27.350265,75.836387,2025-05-30,42.9,Dug Well,7.63,No,4790.0,Yes,2701.0,Yes,402.7,No,1046.8,Yes,58.08,Yes,2.11,Yes,1.66,Yes,0.0079,No
+WQ_5047,Uttar Pradesh,District_C,Village_20,16.515197,87.186582,2025-05-13,95.4,Bore Well,6.03,Yes,1087.0,No,2982.0,Yes,419.6,No,863.6,No,16.73,No,2.69,Yes,0.47,No,0.0387,No
+WQ_5048,Uttar Pradesh,District_C,Village_14,14.562448,86.392434,2024-09-17,73.3,Tube Well,8.31,No,1947.0,No,2732.0,Yes,642.1,Yes,1128.4,Yes,97.1,Yes,1.16,No,1.226,Yes,0.1821,Yes
+WQ_5049,West Bengal,District_B,Village_31,25.817779,79.267579,2025-03-11,16.9,Tube Well,7.96,No,2680.0,No,593.0,No,711.7,Yes,521.4,No,38.81,No,2.05,Yes,0.983,No,0.0188,No
+WQ_5050,Uttar Pradesh,District_B,Village_8,17.748832,69.889322,2024-11-16,27.2,Tube Well,6.02,Yes,988.0,No,1025.0,No,453.7,No,1379.7,Yes,54.08,Yes,2.15,Yes,0.722,No,0.1506,Yes
+WQ_5051,Andhra Pradesh,District_B,Village_26,22.409375,77.19588,2025-03-13,27.4,Dug Well,6.91,No,3143.0,Yes,1307.0,No,717.0,Yes,359.9,No,7.4,No,1.81,Yes,1.773,Yes,0.0736,Yes
+WQ_5052,Uttar Pradesh,District_A,Village_19,22.954227,72.628252,2025-07-27,60.3,Bore Well,8.36,No,4348.0,Yes,360.0,No,317.3,No,963.1,No,3.57,No,2.1,Yes,1.061,Yes,0.0584,Yes
+WQ_5053,West Bengal,District_C,Village_17,26.293089,73.801014,2025-01-03,99.2,Dug Well,8.45,No,3569.0,Yes,231.0,No,728.2,Yes,1187.2,Yes,22.98,No,1.24,No,0.545,No,0.1969,Yes
+WQ_5054,Rajasthan,District_C,Village_18,27.083929,86.604506,2024-11-22,81.0,Tube Well,7.37,No,1107.0,No,664.0,No,163.8,No,824.5,No,92.0,Yes,2.98,Yes,0.582,No,0.1398,Yes
+WQ_5055,Uttar Pradesh,District_A,Village_7,21.94196,77.778722,2024-10-25,69.9,Tube Well,7.11,No,4728.0,Yes,2131.0,Yes,615.7,Yes,371.2,No,16.94,No,1.24,No,1.536,Yes,0.1878,Yes
+WQ_5056,Telangana,District_A,Village_16,18.546597,83.483136,2025-08-11,52.3,Tube Well,6.89,No,3722.0,Yes,2405.0,Yes,202.1,No,464.7,No,49.53,Yes,0.64,No,1.858,Yes,0.1187,Yes
+WQ_5057,Andhra Pradesh,District_A,Village_41,12.424066,71.680597,2025-05-09,95.9,Dug Well,8.21,No,3699.0,Yes,264.0,No,721.5,Yes,671.2,No,66.01,Yes,2.88,Yes,0.209,No,0.097,Yes
+WQ_5058,Maharashtra,District_B,Village_22,10.992255,77.990908,2025-01-07,32.7,Dug Well,8.73,Yes,2053.0,No,1920.0,No,695.2,Yes,1475.7,Yes,50.43,Yes,1.42,No,0.161,No,0.0035,No
+WQ_5059,Gujarat,District_A,Village_36,22.176042,69.309287,2025-06-17,44.2,Bore Well,6.01,Yes,3115.0,Yes,1305.0,No,145.3,No,451.6,No,57.01,Yes,2.0,Yes,0.93,No,0.161,Yes
+WQ_5060,West Bengal,District_B,Village_42,12.248808,69.690914,2025-05-26,14.0,Bore Well,7.61,No,3561.0,Yes,435.0,No,529.2,No,720.7,No,98.74,Yes,2.18,Yes,1.318,Yes,0.1145,Yes
+WQ_5061,Tamil Nadu,District_B,Village_42,29.947324,87.609183,2025-08-06,58.4,Dug Well,7.37,No,2364.0,No,1314.0,No,448.5,No,417.6,No,92.69,Yes,1.52,Yes,1.686,Yes,0.0956,Yes
+WQ_5062,Telangana,District_A,Village_35,24.365805,74.737639,2025-08-17,66.2,Dug Well,7.5,No,1899.0,No,2651.0,Yes,134.5,No,735.5,No,19.52,No,2.6,Yes,0.514,No,0.1271,Yes
+WQ_5063,Madhya Pradesh,District_A,Village_3,13.31127,76.098273,2025-02-14,90.9,Bore Well,6.5,No,3350.0,Yes,653.0,No,361.8,No,815.5,No,57.77,Yes,1.85,Yes,1.284,Yes,0.0551,Yes
+WQ_5064,Gujarat,District_C,Village_19,18.02735,68.746373,2025-08-17,79.2,Dug Well,8.51,Yes,1076.0,No,644.0,No,81.5,No,1455.9,Yes,80.74,Yes,1.15,No,0.969,No,0.0591,Yes
+WQ_5065,Uttar Pradesh,District_C,Village_39,21.944879,82.346168,2025-07-13,50.3,Bore Well,8.62,Yes,2633.0,No,476.0,No,516.7,No,698.7,No,93.57,Yes,1.24,No,0.812,No,0.1305,Yes
+WQ_5066,Uttar Pradesh,District_B,Village_42,20.539724,75.488998,2024-12-01,99.1,Tube Well,6.91,No,1460.0,No,2600.0,Yes,52.5,No,309.9,No,59.09,Yes,0.57,No,1.972,Yes,0.0934,Yes
+WQ_5067,West Bengal,District_A,Village_33,21.947281,71.207469,2025-01-09,36.0,Bore Well,7.84,No,2793.0,No,2364.0,Yes,251.9,No,983.8,No,29.17,No,1.8,Yes,1.214,Yes,0.0252,No
+WQ_5068,Rajasthan,District_A,Village_22,20.972662,68.238766,2025-06-14,55.1,Tube Well,8.09,No,457.0,No,2819.0,Yes,394.1,No,1408.2,Yes,10.83,No,2.85,Yes,0.227,No,0.0928,Yes
+WQ_5069,West Bengal,District_C,Village_17,28.759841,72.654164,2025-06-02,13.1,Dug Well,8.38,No,3020.0,Yes,1566.0,No,75.8,No,983.3,No,17.25,No,2.8,Yes,1.375,Yes,0.1417,Yes
+WQ_5070,Tamil Nadu,District_B,Village_37,14.651605,85.615077,2024-09-25,58.4,Dug Well,8.57,Yes,1428.0,No,2279.0,Yes,480.9,No,82.1,No,40.59,No,0.63,No,0.725,No,0.0773,Yes
+WQ_5071,Gujarat,District_C,Village_41,19.498567,80.005809,2025-02-10,61.4,Bore Well,6.12,Yes,3778.0,Yes,2850.0,Yes,311.5,No,277.8,No,54.05,Yes,2.14,Yes,1.361,Yes,0.1228,Yes
+WQ_5072,Andhra Pradesh,District_B,Village_6,12.924645,84.736498,2025-02-12,48.3,Tube Well,6.66,No,523.0,No,1279.0,No,513.5,No,1001.4,Yes,96.28,Yes,0.54,No,1.972,Yes,0.1313,Yes
+WQ_5073,Maharashtra,District_A,Village_9,19.084581,85.763885,2025-01-04,72.5,Bore Well,7.05,No,4432.0,Yes,2017.0,Yes,574.1,No,1345.6,Yes,44.9,No,2.01,Yes,1.492,Yes,0.0913,Yes
+WQ_5074,Rajasthan,District_A,Village_17,11.669042,83.428795,2025-02-21,14.3,Dug Well,8.15,No,4563.0,Yes,1074.0,No,126.5,No,357.0,No,56.27,Yes,2.83,Yes,1.029,Yes,0.0234,No
+WQ_5075,West Bengal,District_B,Village_22,22.555663,82.656899,2025-04-04,45.4,Tube Well,8.16,No,1692.0,No,2378.0,Yes,305.8,No,391.6,No,87.93,Yes,1.69,Yes,0.577,No,0.1871,Yes
+WQ_5076,Telangana,District_A,Village_17,23.817024,72.414008,2024-10-06,65.3,Bore Well,8.61,Yes,3511.0,Yes,772.0,No,536.6,No,932.5,No,82.1,Yes,0.62,No,1.402,Yes,0.0064,No
+WQ_5077,Rajasthan,District_A,Village_43,23.923506,87.208746,2025-07-07,25.7,Bore Well,6.93,No,2956.0,No,2211.0,Yes,308.3,No,999.7,No,89.94,Yes,2.21,Yes,1.425,Yes,0.077,Yes
+WQ_5078,Uttar Pradesh,District_A,Village_26,28.228586,73.546459,2024-09-19,28.5,Tube Well,7.09,No,3286.0,Yes,2592.0,Yes,149.1,No,1222.6,Yes,81.3,Yes,1.8,Yes,1.524,Yes,0.0372,No
+WQ_5079,Uttar Pradesh,District_C,Village_8,13.39172,85.256001,2024-10-13,54.8,Bore Well,6.74,No,3475.0,Yes,2681.0,Yes,524.2,No,527.5,No,48.38,Yes,2.28,Yes,0.144,No,0.0442,No
+WQ_5080,Tamil Nadu,District_C,Village_15,19.251664,80.084819,2025-05-16,40.5,Dug Well,6.9,No,303.0,No,146.0,No,259.0,No,800.5,No,55.68,Yes,1.53,Yes,0.826,No,0.0512,Yes
+WQ_5081,West Bengal,District_A,Village_30,18.013889,70.775199,2024-10-30,20.4,Bore Well,6.9,No,4977.0,Yes,1013.0,No,752.3,Yes,594.5,No,43.96,No,2.41,Yes,0.196,No,0.0373,No
+WQ_5082,Madhya Pradesh,District_C,Village_36,29.476805,78.118347,2025-01-07,14.0,Tube Well,6.14,Yes,4545.0,Yes,2626.0,Yes,393.8,No,253.2,No,83.05,Yes,1.04,No,0.844,No,0.1368,Yes
+WQ_5083,Rajasthan,District_A,Village_44,17.067967,80.573399,2024-11-04,89.7,Dug Well,8.39,No,1970.0,No,899.0,No,264.1,No,529.4,No,49.4,Yes,1.31,No,0.275,No,0.0335,No
+WQ_5084,Andhra Pradesh,District_B,Village_34,16.858592,79.241282,2024-09-10,63.3,Bore Well,7.46,No,3720.0,Yes,2225.0,Yes,370.7,No,195.4,No,53.06,Yes,1.21,No,0.284,No,0.1964,Yes
+WQ_5085,Maharashtra,District_C,Village_8,17.395108,80.515957,2025-08-05,54.1,Tube Well,6.43,Yes,372.0,No,1896.0,No,235.3,No,373.0,No,95.7,Yes,1.44,No,0.069,No,0.0686,Yes
+WQ_5086,Andhra Pradesh,District_A,Village_37,21.689831,74.571348,2024-12-05,12.4,Dug Well,7.33,No,619.0,No,1877.0,No,514.7,No,66.3,No,29.14,No,1.3,No,1.105,Yes,0.0599,Yes
+WQ_5087,Gujarat,District_B,Village_34,15.75493,87.660303,2025-01-22,13.8,Dug Well,8.97,Yes,334.0,No,901.0,No,420.3,No,223.5,No,13.57,No,0.84,No,1.947,Yes,0.0766,Yes
+WQ_5088,Rajasthan,District_C,Village_38,21.319897,82.085828,2024-12-29,76.8,Dug Well,8.06,No,1751.0,No,380.0,No,261.3,No,323.3,No,13.71,No,0.17,No,1.872,Yes,0.1843,Yes
+WQ_5089,Andhra Pradesh,District_B,Village_4,11.00834,71.461691,2025-01-16,22.6,Dug Well,6.84,No,1100.0,No,2840.0,Yes,113.1,No,325.4,No,8.16,No,2.94,Yes,1.838,Yes,0.1436,Yes
+WQ_5090,Andhra Pradesh,District_B,Village_30,18.519461,71.803563,2024-11-21,29.9,Dug Well,7.33,No,3864.0,Yes,831.0,No,283.1,No,903.9,No,23.85,No,1.79,Yes,0.78,No,0.0078,No
+WQ_5091,Andhra Pradesh,District_B,Village_44,18.054026,86.390506,2025-04-01,36.4,Tube Well,6.97,No,423.0,No,1864.0,No,686.9,Yes,535.9,No,24.1,No,2.87,Yes,1.493,Yes,0.1139,Yes
+WQ_5092,Karnataka,District_B,Village_17,16.110623,72.41596,2025-09-04,74.4,Tube Well,7.57,No,2651.0,No,267.0,No,434.1,No,1235.9,Yes,94.69,Yes,0.41,No,1.266,Yes,0.1141,Yes
+WQ_5093,Rajasthan,District_C,Village_5,27.80625,83.024881,2025-08-13,96.9,Bore Well,8.88,Yes,1206.0,No,2190.0,Yes,447.9,No,329.8,No,19.57,No,0.34,No,1.593,Yes,0.0656,Yes
+WQ_5094,Tamil Nadu,District_C,Village_5,27.139377,80.166307,2024-12-02,70.6,Dug Well,6.88,No,2341.0,No,1266.0,No,226.8,No,1250.4,Yes,62.25,Yes,0.21,No,1.642,Yes,0.0221,No
+WQ_5095,Maharashtra,District_B,Village_3,18.073929,79.425138,2025-04-12,10.7,Bore Well,7.96,No,3333.0,Yes,1975.0,No,172.6,No,391.0,No,24.81,No,2.88,Yes,0.144,No,0.0863,Yes
+WQ_5096,Gujarat,District_A,Village_50,27.425078,83.38932,2024-10-12,84.0,Tube Well,8.92,Yes,1998.0,No,963.0,No,73.0,No,233.5,No,56.25,Yes,0.56,No,1.475,Yes,0.0084,No
+WQ_5097,Madhya Pradesh,District_B,Village_25,15.18976,81.909062,2025-01-19,33.0,Bore Well,8.19,No,4980.0,Yes,2401.0,Yes,306.4,No,1351.9,Yes,5.21,No,2.2,Yes,0.056,No,0.0357,No
+WQ_5098,Madhya Pradesh,District_A,Village_44,29.751715,75.217698,2024-10-02,83.8,Tube Well,7.13,No,4216.0,Yes,2898.0,Yes,376.7,No,843.4,No,62.9,Yes,2.81,Yes,0.521,No,0.1226,Yes
+WQ_5099,Gujarat,District_C,Village_23,16.494405,72.338664,2025-07-07,17.6,Dug Well,7.86,No,4422.0,Yes,1087.0,No,464.5,No,966.8,No,41.52,No,2.72,Yes,0.732,No,0.0259,No
+WQ_5100,Andhra Pradesh,District_B,Village_34,12.880407,85.817152,2025-07-02,98.9,Tube Well,6.87,No,804.0,No,1473.0,No,582.1,No,922.5,No,95.12,Yes,2.47,Yes,1.739,Yes,0.1088,Yes

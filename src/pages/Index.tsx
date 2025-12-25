@@ -6,10 +6,11 @@ import { WelcomeScreen } from '@/components/WelcomeScreen';
 import { QuickActions } from '@/components/QuickActions';
 import { ChatHistory } from '@/components/ChatHistory';
 import { GroundwaterCharts } from '@/components/GroundwaterCharts';
+import IndiaMap from '@/components/IndiaMap';
 import { useChat } from '@/hooks/useChat';
 import { useLanguage } from '@/hooks/useLanguage';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Menu, BarChart3, X } from 'lucide-react';
+import { Menu, BarChart3, X, Map } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
@@ -26,6 +27,7 @@ const Index = () => {
   const { t } = useLanguage();
   const scrollAreaRef = useRef<HTMLDivElement>(null);
   const [showCharts, setShowCharts] = useState(false);
+  const [showMap, setShowMap] = useState(false);
 
   const scrollToBottom = () => {
     if (scrollAreaRef.current) {
@@ -83,10 +85,19 @@ const Index = () => {
           ) : (
             <ScrollArea ref={scrollAreaRef} className="flex-1">
               <div className="max-w-4xl mx-auto px-4 py-6 space-y-4">
-                {/* Charts Toggle */}
-                <div className="flex justify-end">
+                {/* Toggle Buttons */}
+                <div className="flex justify-end gap-2">
                   <Button
-                    variant="outline"
+                    variant={showMap ? "default" : "outline"}
+                    size="sm"
+                    onClick={() => setShowMap(!showMap)}
+                    className="gap-2"
+                  >
+                    {showMap ? <X className="h-4 w-4" /> : <Map className="h-4 w-4" />}
+                    {showMap ? 'Hide Map' : 'View Map'}
+                  </Button>
+                  <Button
+                    variant={showCharts ? "default" : "outline"}
                     size="sm"
                     onClick={() => setShowCharts(!showCharts)}
                     className="gap-2"
@@ -95,6 +106,13 @@ const Index = () => {
                     {showCharts ? t('hideCharts') : t('viewCharts')}
                   </Button>
                 </div>
+
+                {/* Map */}
+                {showMap && (
+                  <div className="animate-fade-in">
+                    <IndiaMap />
+                  </div>
+                )}
 
                 {/* Charts */}
                 {showCharts && (
