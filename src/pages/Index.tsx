@@ -1,13 +1,15 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { Header } from '@/components/Header';
 import { ChatMessage } from '@/components/ChatMessage';
 import { ChatInput } from '@/components/ChatInput';
 import { WelcomeScreen } from '@/components/WelcomeScreen';
 import { QuickActions } from '@/components/QuickActions';
 import { ChatHistory } from '@/components/ChatHistory';
+import { GroundwaterCharts } from '@/components/GroundwaterCharts';
 import { useChat } from '@/hooks/useChat';
+import { useLanguage } from '@/hooks/useLanguage';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Menu } from 'lucide-react';
+import { Menu, BarChart3, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
@@ -21,7 +23,9 @@ const Index = () => {
     startNewChat,
     conversationId 
   } = useChat();
+  const { t } = useLanguage();
   const scrollAreaRef = useRef<HTMLDivElement>(null);
+  const [showCharts, setShowCharts] = useState(false);
 
   const scrollToBottom = () => {
     if (scrollAreaRef.current) {
@@ -78,15 +82,38 @@ const Index = () => {
             <WelcomeScreen onQuickAction={sendMessage} />
           ) : (
             <ScrollArea ref={scrollAreaRef} className="flex-1">
-              <div className="max-w-4xl mx-auto px-4 py-6 space-y-2">
-                {messages.map((msg) => (
-                  <ChatMessage
-                    key={msg.id}
-                    role={msg.role}
-                    content={msg.content}
-                    isStreaming={msg.isStreaming}
-                  />
-                ))}
+              <div className="max-w-4xl mx-auto px-4 py-6 space-y-4">
+                {/* Charts Toggle */}
+                <div className="flex justify-end">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => setShowCharts(!showCharts)}
+                    className="gap-2"
+                  >
+                    {showCharts ? <X className="h-4 w-4" /> : <BarChart3 className="h-4 w-4" />}
+                    {showCharts ? t('hideCharts') : t('viewCharts')}
+                  </Button>
+                </div>
+
+                {/* Charts */}
+                {showCharts && (
+                  <div className="animate-fade-in">
+                    <GroundwaterCharts />
+                  </div>
+                )}
+
+                {/* Messages */}
+                <div className="space-y-2">
+                  {messages.map((msg) => (
+                    <ChatMessage
+                      key={msg.id}
+                      role={msg.role}
+                      content={msg.content}
+                      isStreaming={msg.isStreaming}
+                    />
+                  ))}
+                </div>
               </div>
             </ScrollArea>
           )}

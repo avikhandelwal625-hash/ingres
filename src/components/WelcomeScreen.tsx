@@ -1,30 +1,33 @@
 import { Droplets, Database, Globe2, BarChart3 } from 'lucide-react';
 import { StatusLegend } from './StatusBadge';
 import { QuickActions } from './QuickActions';
+import { useLanguage } from '@/hooks/useLanguage';
 
 interface WelcomeScreenProps {
   onQuickAction: (query: string) => void;
 }
 
-const features = [
-  {
-    icon: Database,
-    title: 'Comprehensive Data',
-    description: 'Access groundwater assessment data for all blocks, mandals, and taluks across India',
-  },
-  {
-    icon: Globe2,
-    title: 'State-wise Analysis',
-    description: 'Explore recharge rates, extraction levels, and categorization by region',
-  },
-  {
-    icon: BarChart3,
-    title: 'Historical Trends',
-    description: 'Compare year-over-year changes in groundwater resources and extraction',
-  },
-];
-
 export function WelcomeScreen({ onQuickAction }: WelcomeScreenProps) {
+  const { t } = useLanguage();
+
+  const features = [
+    {
+      icon: Database,
+      title: t('feature1'),
+      description: t('feature1Desc'),
+    },
+    {
+      icon: Globe2,
+      title: t('feature2'),
+      description: t('feature2Desc'),
+    },
+    {
+      icon: BarChart3,
+      title: t('feature3'),
+      description: t('feature3Desc'),
+    },
+  ];
+
   return (
     <div className="flex-1 overflow-auto">
       <div className="max-w-4xl mx-auto px-4 py-8 space-y-8">
@@ -34,11 +37,10 @@ export function WelcomeScreen({ onQuickAction }: WelcomeScreenProps) {
             <Droplets className="w-10 h-10" />
           </div>
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground">
-            Welcome to <span className="text-gradient">INGRES AI</span>
+            {t('welcome')}
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Your intelligent assistant for India's groundwater resource data. 
-            Ask questions about recharge rates, extraction levels, and regional assessments.
+            {t('welcomeDesc')}
           </p>
         </div>
 
@@ -63,7 +65,7 @@ export function WelcomeScreen({ onQuickAction }: WelcomeScreenProps) {
 
         {/* Quick Actions */}
         <div className="space-y-3">
-          <h3 className="font-display font-semibold text-foreground">Quick Questions</h3>
+          <h3 className="font-display font-semibold text-foreground">{t('quickActions')}</h3>
           <QuickActions onSelect={onQuickAction} />
         </div>
 
