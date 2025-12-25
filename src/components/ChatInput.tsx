@@ -1,16 +1,17 @@
 import { useState, useRef, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Send, Loader2 } from 'lucide-react';
+import { useLanguage } from '@/hooks/useLanguage';
 
 interface ChatInputProps {
   onSend: (message: string) => void;
   isLoading: boolean;
-  placeholder?: string;
 }
 
-export function ChatInput({ onSend, isLoading, placeholder = 'Ask about groundwater resources...' }: ChatInputProps) {
+export function ChatInput({ onSend, isLoading }: ChatInputProps) {
   const [input, setInput] = useState('');
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     if (textareaRef.current) {
@@ -42,7 +43,7 @@ export function ChatInput({ onSend, isLoading, placeholder = 'Ask about groundwa
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={handleKeyDown}
-          placeholder={placeholder}
+          placeholder={t('askAnything')}
           disabled={isLoading}
           rows={1}
           className="flex-1 resize-none bg-transparent px-3 py-2.5 text-sm placeholder:text-muted-foreground focus:outline-none disabled:opacity-50 min-h-[44px] max-h-[150px]"

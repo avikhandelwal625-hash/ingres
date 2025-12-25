@@ -2,6 +2,7 @@ import { MessageSquare, Plus } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { cn } from '@/lib/utils';
+import { useLanguage } from '@/hooks/useLanguage';
 
 interface Conversation {
   id: string;
@@ -17,6 +18,8 @@ interface ChatHistoryProps {
 }
 
 export function ChatHistory({ conversations, currentId, onSelect, onNewChat }: ChatHistoryProps) {
+  const { t } = useLanguage();
+
   return (
     <div className="flex flex-col h-full bg-card border-r border-border">
       <div className="p-4 border-b border-border">
@@ -26,7 +29,7 @@ export function ChatHistory({ conversations, currentId, onSelect, onNewChat }: C
           variant="outline"
         >
           <Plus className="h-4 w-4" />
-          New Chat
+          {t('newChat')}
         </Button>
       </div>
       
@@ -34,7 +37,7 @@ export function ChatHistory({ conversations, currentId, onSelect, onNewChat }: C
         <div className="p-2 space-y-1">
           {conversations.length === 0 ? (
             <p className="text-sm text-muted-foreground text-center py-4">
-              No conversations yet
+              {t('noConversations')}
             </p>
           ) : (
             conversations.map((conv) => (
@@ -49,7 +52,7 @@ export function ChatHistory({ conversations, currentId, onSelect, onNewChat }: C
               >
                 <MessageSquare className="h-4 w-4 flex-shrink-0 text-muted-foreground" />
                 <span className="truncate">
-                  {conv.title || 'New conversation'}
+                  {conv.title || t('newChat')}
                 </span>
               </button>
             ))
