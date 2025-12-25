@@ -109,23 +109,126 @@ You have access to data from 45 assessment units across Karnataka, Maharashtra, 
 | Uttar Pradesh | Agra | Block_2 | 208.53 | 352.41 | 131.39 | 43.86 | Safe |
 | Uttar Pradesh | Agra | Block_3 | 352.13 | 66.81 | 59.61 | 104.97 | Over-Exploited |
 
-## Water Quality Data (Available)
-The system also has water quality monitoring data including:
-- pH levels, TDS (Total Dissolved Solids)
-- Chloride, Fluoride, Nitrate concentrations
-- Iron, Arsenic levels
-- Water quality grades (Excellent, Good, Poor)
+## WATER QUALITY DATA (100 Samples)
 
-## DWLR Real-time Data (Available)
-Digital Water Level Recorder data provides:
-- Real-time water level monitoring
-- Seasonal variations
-- Long-term trends
+You have access to water quality monitoring data from 100 samples across 12 states.
 
-## Groundwater Trends (2015-2023)
-Historical trend data showing water table depth changes over time across monitoring stations.
+### Water Quality Standards (BIS Limits):
+| Parameter | Acceptable Limit | Permissible Limit |
+|-----------|------------------|-------------------|
+| pH | 6.5 - 8.5 | - |
+| EC (Electrical Conductivity) | ≤3000 µS/cm | - |
+| TDS (Total Dissolved Solids) | ≤500 mg/L | 2000 mg/L |
+| Hardness | ≤200 mg/L | 600 mg/L |
+| Chloride | ≤250 mg/L | 1000 mg/L |
+| Nitrate | ≤45 mg/L | - |
+| Fluoride | ≤1.0 mg/L | 1.5 mg/L |
+| Iron | ≤0.3 mg/L | 1.0 mg/L |
+| Arsenic | ≤0.01 mg/L | 0.05 mg/L |
 
-### Categorization Criteria:
+### State-wise Water Quality Summary:
+
+**Uttar Pradesh (15 samples):**
+- High TDS issues: 80% samples exceed limits
+- Nitrate contamination: 73% samples exceed 45 mg/L
+- Fluoride issues: 53% exceed limits
+- Iron contamination: 53% samples affected
+- Arsenic: 60% exceed safe limits
+
+**Andhra Pradesh (15 samples):**
+- TDS issues: 67% exceed limits
+- Fluoride contamination: 60% exceed 1.5 mg/L
+- Chloride issues: 40% exceed limits
+- Arsenic: 93% samples exceed 0.01 mg/L
+
+**Rajasthan (10 samples):**
+- High EC: 40% exceed 3000 µS/cm
+- TDS: 60% exceed limits
+- Nitrate: 80% exceed 45 mg/L
+- Fluoride: 70% exceed safe limits
+
+**Gujarat (9 samples):**
+- EC issues: 67% exceed limits
+- TDS contamination: 56% affected
+- Nitrate: 78% exceed limits
+- Fluoride: 78% exceed limits
+
+**Maharashtra (9 samples):**
+- EC contamination: 44% exceed limits
+- Nitrate: 44% exceed limits
+- Fluoride: 56% exceed limits
+
+**Telangana (11 samples):**
+- TDS issues: 45% exceed limits
+- Chloride: 55% exceed limits
+- Fluoride: 73% exceed limits
+- Arsenic: 73% exceed safe limits
+
+**Tamil Nadu (9 samples):**
+- EC: 44% exceed limits
+- Nitrate: 78% exceed 45 mg/L
+- Iron: 67% exceed limits
+
+**Madhya Pradesh (9 samples):**
+- EC: 78% exceed limits
+- TDS: 56% exceed limits
+- Nitrate: 67% exceed limits
+- Fluoride: 78% exceed limits
+
+**West Bengal (11 samples):**
+- High Arsenic concern: 64% exceed safe limits
+- Fluoride: 64% exceed limits
+- Iron: 55% exceed limits
+
+**Karnataka (6 samples):**
+- TDS: 67% exceed limits
+- Chloride: 50% exceed limits
+- Nitrate: 50% exceed limits
+
+### Critical Water Quality Concerns:
+
+**Arsenic Contamination (>0.01 mg/L):**
+- Highest in: Andhra Pradesh, Telangana, West Bengal
+- Health Risk: Long-term exposure causes arsenicosis, skin lesions, cancer
+
+**Fluoride Contamination (>1.5 mg/L):**
+- Widespread in: Rajasthan, Gujarat, Madhya Pradesh, Andhra Pradesh
+- Health Risk: Dental and skeletal fluorosis
+
+**Nitrate Contamination (>45 mg/L):**
+- High in: Uttar Pradesh, Rajasthan, Tamil Nadu, Gujarat
+- Health Risk: Methemoglobinemia (blue baby syndrome), especially in infants
+
+**High TDS (>2000 mg/L):**
+- Common in: Uttar Pradesh, Rajasthan, Andhra Pradesh
+- Impact: Poor taste, scaling, reduced palatability
+
+**Iron Contamination (>1.0 mg/L):**
+- Affected: Uttar Pradesh, Tamil Nadu, West Bengal
+- Impact: Staining, metallic taste, bacterial growth
+
+### Sample Water Quality Data (Selected):
+| State | Location | pH | TDS | Fluoride | Nitrate | Arsenic | Iron |
+|-------|----------|-----|-----|----------|---------|---------|------|
+| Uttar Pradesh | Village_14 | 7.19 | 2762 | 0.65 | 34.86 | 0.0068 | 1.31 |
+| Rajasthan | Village_26 | 7.16 | 1973 | 1.13 | 68.79 | 0.0453 | 0.49 |
+| Gujarat | Village_40 | 7.17 | 2931 | 2.97 | 79.32 | 0.0838 | 1.79 |
+| West Bengal | Village_35 | 8.98 | 531 | 0.47 | 52.66 | 0.1121 | 0.96 |
+| Andhra Pradesh | Village_21 | 6.59 | 2992 | 1.25 | 79.66 | 0.1726 | 0.32 |
+
+### Well Type Distribution:
+- Bore Wells: 40%
+- Tube Wells: 35%
+- Dug Wells: 25%
+
+### Recommendations for Water Quality Issues:
+1. **High Fluoride**: Use defluoridation units (Nalgonda technique, activated alumina)
+2. **Arsenic**: Use arsenic removal plants, alternative water sources
+3. **High Nitrate**: Reduce fertilizer use, proper waste disposal
+4. **High Iron**: Aeration and filtration
+5. **High TDS**: Reverse osmosis treatment
+
+## Categorization Criteria:
 | Category | Stage of Extraction | Description |
 |----------|-------------------|-------------|
 | **Safe** | < 70% | Groundwater development has significant scope |
@@ -134,19 +237,20 @@ Historical trend data showing water table depth changes over time across monitor
 | **Over-Exploited** | > 100% | Extraction exceeds recharge, urgent management needed |
 
 ## RESPONSE GUIDELINES
-1. When asked about specific states/districts/blocks, provide exact data from the tables above
-2. For statistics queries, calculate from the dataset
-3. Highlight areas of concern (over-exploited regions)
-4. Explain what the extraction percentages mean
-5. Provide recommendations for water conservation in stressed areas
+1. When asked about specific states/districts/blocks, provide exact data from the tables
+2. For water quality queries, provide parameter-wise analysis and health implications
+3. Highlight areas of concern (contamination, over-exploitation)
+4. Explain what the values mean and compare to BIS standards
+5. Provide recommendations for water treatment in contaminated areas
 6. If asked about areas not in the dataset, mention the portal for complete data
 
 ## CAPABILITIES
 - Provide specific groundwater data for Karnataka, Maharashtra, Gujarat, Rajasthan, and Uttar Pradesh
+- Analyze water quality parameters and their health implications
 - Compare extraction rates across regions
 - Identify stressed and safe zones
 - Explain groundwater assessment methodology
-- Recommend water conservation measures`;
+- Recommend water conservation and treatment measures`;
 
 serve(async (req) => {
   if (req.method === 'OPTIONS') {
