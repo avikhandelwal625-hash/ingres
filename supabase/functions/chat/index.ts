@@ -133,45 +133,44 @@ serve(async (req) => {
 
   try {
     const { messages } = await req.json();
-    const GOOGLE_AI_API_KEY = Deno.env.get('GOOGLE_AI_API_KEY');
+    const LOVABLE_API_KEY = Deno.env.get('LOVABLE_API_KEY');
     
-    if (!GOOGLE_AI_API_KEY) {
-      throw new Error('GOOGLE_AI_API_KEY is not configured');
+    if (!LOVABLE_API_KEY) {
+      throw new Error('LOVABLE_API_KEY is not configured');
     }
 
     console.log('Processing chat request with', messages.length, 'messages');
 
-    // Convert messages to Gemini format
-    const geminiMessages = messages.map((msg: { role: string; content: string }) => ({
-      role: msg.role === 'assistant' ? 'model' : 'user',
-      parts: [{ text: msg.content }]
-    }));
-
-    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:streamGenerateContent?key=${GOOGLE_AI_API_KEY}`, {
+    const response = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
       method: 'POST',
       headers: {
+        'Authorization': `Bearer ${LOVABLE_API_KEY}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        contents: [
-          { role: 'user', parts: [{ text: SYSTEM_PROMPT }] },
-          { role: 'model', parts: [{ text: 'I understand. I am INGRES AI Assistant, ready to help with groundwater resource information for India. How can I assist you today?' }] },
-          ...geminiMessages
+        model: 'google/gemini-2.5-flash',
+        messages: [
+          { role: 'system', content: SYSTEM_PROMPT },
+          ...messages
         ],
-        generationConfig: {
-          temperature: 0.7,
-          maxOutputTokens: 2048,
-        },
+        stream: true,
       }),
     });
 
     if (!response.ok) {
       const errorText = await response.text();
-      console.error('Google AI error:', response.status, errorText);
+      console.error('Lovable AI error:', response.status, errorText);
       
       if (response.status === 429) {
         return new Response(JSON.stringify({ error: 'Rate limit exceeded. Please try again in a moment.' }), {
           status: 429,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
+
+      if (response.status === 402) {
+        return new Response(JSON.stringify({ error: 'Payment required. Please add credits to continue.' }), {
+          status: 402,
           headers: { ...corsHeaders, 'Content-Type': 'application/json' },
         });
       }
@@ -182,58 +181,8 @@ serve(async (req) => {
       });
     }
 
-    // Transform Gemini streaming response to SSE format
-    const reader = response.body?.getReader();
-    const encoder = new TextEncoder();
-    
-    const stream = new ReadableStream({
-      async start(controller) {
-        if (!reader) {
-          controller.close();
-          return;
-        }
-
-        const decoder = new TextDecoder();
-        let buffer = '';
-
-        while (true) {
-          const { done, value } = await reader.read();
-          if (done) break;
-
-          buffer += decoder.decode(value, { stream: true });
-          
-          // Parse JSON array chunks from Gemini
-          try {
-            // Gemini returns a JSON array, we need to parse partial responses
-            const lines = buffer.split('\n');
-            for (const line of lines) {
-              if (line.trim().startsWith('{') || line.trim().startsWith('[')) {
-                try {
-                  const parsed = JSON.parse(line.replace(/^\[|\]$/g, '').trim());
-                  if (parsed.candidates?.[0]?.content?.parts?.[0]?.text) {
-                    const text = parsed.candidates[0].content.parts[0].text;
-                    const sseData = JSON.stringify({
-                      choices: [{ delta: { content: text } }]
-                    });
-                    controller.enqueue(encoder.encode(`data: ${sseData}\n\n`));
-                  }
-                } catch {
-                  // Continue accumulating buffer
-                }
-              }
-            }
-            buffer = '';
-          } catch {
-            // Continue accumulating
-          }
-        }
-        
-        controller.enqueue(encoder.encode('data: [DONE]\n\n'));
-        controller.close();
-      }
-    });
-
-    return new Response(stream, {
+    // Stream the response directly
+    return new Response(response.body, {
       headers: { ...corsHeaders, 'Content-Type': 'text/event-stream' },
     });
   } catch (error) {
