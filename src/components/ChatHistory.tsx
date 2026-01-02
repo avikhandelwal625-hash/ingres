@@ -46,12 +46,12 @@ export function ChatHistory({ conversations, currentId, onSelect, onNewChat }: C
                 onClick={() => onSelect(conv.id)}
                 className={cn(
                   "w-full text-left px-3 py-2 rounded-lg text-sm transition-colors",
-                  "hover:bg-accent/50 flex items-center gap-2",
+                  "hover:bg-accent/50 flex items-start gap-2",
                   currentId === conv.id && "bg-accent"
                 )}
               >
-                <MessageSquare className="h-4 w-4 flex-shrink-0 text-muted-foreground" />
-                <span className="truncate">
+                <MessageSquare className="h-4 w-4 flex-shrink-0 text-muted-foreground mt-0.5" />
+                <span className="break-words hyphens-auto leading-snug">
                   {conv.title || t('newChat')}
                 </span>
               </button>
