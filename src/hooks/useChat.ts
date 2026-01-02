@@ -178,6 +178,75 @@ export function useChat() {
     setConversationId(null);
   }, []);
 
+  // Delete conversation
+  const deleteConversation = useCallback(async (convId: string) => {
+    // Delete messages first (foreign key constraint)
+    const { error: msgError } = await supabase
+      .from('messages')
+      .delete()
+      .eq('conversation_id', convId);
+    
+    if (msgError) {
+      console.error('Error deleting messages:', msgError);
+      toast({
+        title: 'Error',
+        description: 'Failed to delete conversation',
+        variant: 'destructive',
+      });
+      return false;
+    }
+
+    // Delete conversation
+    const { error } = await supabase
+      .from('conversations')
+      .delete()
+      .eq('id', convId);
+    
+    if (error) {
+      console.error('Error deleting conversation:', error);
+      toast({
+        title: 'Error',
+        description: 'Failed to delete conversation',
+        variant: 'destructive',
+      });
+      return false;
+    }
+
+    // Clear current chat if we deleted it
+    if (conversationId === convId) {
+      setMessages([]);
+      setConversationId(null);
+    }
+
+    loadConversations();
+    toast({
+      title: 'Deleted',
+      description: 'Conversation deleted successfully',
+    });
+    return true;
+  }, [conversationId, loadConversations, toast]);
+
+  // Rename conversation
+  const renameConversation = useCallback(async (convId: string, newTitle: string) => {
+    const { error } = await supabase
+      .from('conversations')
+      .update({ title: newTitle })
+      .eq('id', convId);
+    
+    if (error) {
+      console.error('Error renaming conversation:', error);
+      toast({
+        title: 'Error',
+        description: 'Failed to rename conversation',
+        variant: 'destructive',
+      });
+      return false;
+    }
+
+    loadConversations();
+    return true;
+  }, [loadConversations, toast]);
+
   // Load conversations on mount
   useEffect(() => {
     loadConversations();
@@ -191,5 +260,7 @@ export function useChat() {
     loadMessages,
     startNewChat,
     conversationId,
+    deleteConversation,
+    renameConversation,
   };
 }
