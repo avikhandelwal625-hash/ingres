@@ -55,19 +55,19 @@ const Index = () => {
   );
 
   return (
-    <div className="flex h-screen bg-background">
+    <div className="flex h-screen bg-background overflow-hidden">
       {/* Desktop Sidebar */}
-      <div className={`hidden md:flex transition-all duration-300 ${sidebarCollapsed ? 'w-0' : 'w-64'}`}>
+      <div className={`hidden md:flex flex-shrink-0 z-20 transition-all duration-300 ${sidebarCollapsed ? 'w-0 overflow-hidden' : 'w-64'}`}>
         {!sidebarCollapsed && <ChatHistoryPanel />}
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 flex flex-col overflow-hidden">
-        <div className="flex items-center border-b border-border">
+      <div className="flex-1 flex flex-col min-w-0 overflow-hidden">
+        <div className="flex items-center border-b border-border bg-background z-10 flex-shrink-0">
           {/* Mobile Menu */}
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="md:hidden m-2">
+              <Button variant="ghost" size="icon" className="md:hidden m-2 flex-shrink-0">
                 <Menu className="h-5 w-5" />
               </Button>
             </SheetTrigger>
@@ -80,7 +80,7 @@ const Index = () => {
           <Button 
             variant="ghost" 
             size="icon" 
-            className="hidden md:flex m-2"
+            className="hidden md:flex m-2 flex-shrink-0"
             onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
           >
             {sidebarCollapsed ? (
@@ -90,7 +90,7 @@ const Index = () => {
             )}
           </Button>
           
-          <div className="flex-1">
+          <div className="flex-1 min-w-0 overflow-hidden">
             <Header />
           </div>
         </div>
