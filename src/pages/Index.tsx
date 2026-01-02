@@ -10,10 +10,11 @@ import IndiaMap from '@/components/IndiaMap';
 import { useChat } from '@/hooks/useChat';
 import { useLanguage } from '@/hooks/useLanguage';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Menu, BarChart3, X, Map } from 'lucide-react';
+import { Menu, BarChart3, X, Map, PanelLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { ResizablePanelGroup, ResizablePanel, ResizableHandle } from '@/components/ui/resizable';
+import type { ImperativePanelHandle } from 'react-resizable-panels';
 
 const Index = () => {
   const { 
@@ -27,8 +28,10 @@ const Index = () => {
   } = useChat();
   const { t } = useLanguage();
   const scrollAreaRef = useRef<HTMLDivElement>(null);
+  const sidebarPanelRef = useRef<ImperativePanelHandle>(null);
   const [showCharts, setShowCharts] = useState(false);
   const [showMap, setShowMap] = useState(false);
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
 
   const scrollToBottom = () => {
     if (scrollAreaRef.current) {
@@ -45,6 +48,24 @@ const Index = () => {
 
   const hasMessages = messages.length > 0;
 
+  const handleSidebarResize = (size: number) => {
+    // Auto-collapse when resized below 10%
+    if (size < 10 && !sidebarCollapsed) {
+      setSidebarCollapsed(true);
+      sidebarPanelRef.current?.collapse();
+    }
+  };
+
+  const toggleSidebar = () => {
+    if (sidebarCollapsed) {
+      sidebarPanelRef.current?.expand();
+      setSidebarCollapsed(false);
+    } else {
+      sidebarPanelRef.current?.collapse();
+      setSidebarCollapsed(true);
+    }
+  };
+
   const ChatHistoryPanel = () => (
     <ChatHistory
       conversations={conversations}
@@ -54,7 +75,7 @@ const Index = () => {
     />
   );
 
-  const MainContent = () => (
+  const MainContent = ({ showCollapseButton = false }: { showCollapseButton?: boolean }) => (
     <div className="flex-1 flex flex-col min-w-0 overflow-hidden h-full">
       <div className="flex items-center border-b border-border bg-background z-10 flex-shrink-0">
         {/* Mobile Menu */}
@@ -68,6 +89,19 @@ const Index = () => {
             <ChatHistoryPanel />
           </SheetContent>
         </Sheet>
+        
+        {/* Desktop Sidebar Toggle */}
+        {showCollapseButton && (
+          <Button 
+            variant="ghost" 
+            size="icon" 
+            className="hidden md:flex m-2 flex-shrink-0"
+            onClick={toggleSidebar}
+            title={sidebarCollapsed ? "Show sidebar" : "Hide sidebar"}
+          >
+            <PanelLeft className={`h-5 w-5 transition-transform ${sidebarCollapsed ? '' : 'rotate-180'}`} />
+          </Button>
+        )}
         
         <div className="flex-1 min-w-0 overflow-hidden">
           <Header />
@@ -158,9 +192,15 @@ const Index = () => {
         <ResizablePanelGroup direction="horizontal" className="h-full">
           {/* Sidebar Panel */}
           <ResizablePanel 
+            ref={sidebarPanelRef}
             defaultSize={20} 
-            minSize={15} 
+            minSize={0}
             maxSize={35}
+            collapsible
+            collapsedSize={0}
+            onCollapse={() => setSidebarCollapsed(true)}
+            onExpand={() => setSidebarCollapsed(false)}
+            onResize={handleSidebarResize}
             className="bg-card"
           >
             <ChatHistoryPanel />
@@ -171,7 +211,7 @@ const Index = () => {
           
           {/* Main Content Panel */}
           <ResizablePanel defaultSize={80} minSize={50}>
-            <MainContent />
+            <MainContent showCollapseButton />
           </ResizablePanel>
         </ResizablePanelGroup>
       </div>
