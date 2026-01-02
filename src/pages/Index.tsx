@@ -10,7 +10,7 @@ import IndiaMap from '@/components/IndiaMap';
 import { useChat } from '@/hooks/useChat';
 import { useLanguage } from '@/hooks/useLanguage';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Menu, BarChart3, X, Map } from 'lucide-react';
+import { Menu, BarChart3, X, Map, PanelLeftClose, PanelLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
@@ -28,6 +28,7 @@ const Index = () => {
   const scrollAreaRef = useRef<HTMLDivElement>(null);
   const [showCharts, setShowCharts] = useState(false);
   const [showMap, setShowMap] = useState(false);
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
 
   const scrollToBottom = () => {
     if (scrollAreaRef.current) {
@@ -56,8 +57,8 @@ const Index = () => {
   return (
     <div className="flex h-screen bg-background">
       {/* Desktop Sidebar */}
-      <div className="hidden md:flex w-64">
-        <ChatHistoryPanel />
+      <div className={`hidden md:flex transition-all duration-300 ${sidebarCollapsed ? 'w-0' : 'w-64'}`}>
+        {!sidebarCollapsed && <ChatHistoryPanel />}
       </div>
 
       {/* Main Content */}
@@ -74,6 +75,21 @@ const Index = () => {
               <ChatHistoryPanel />
             </SheetContent>
           </Sheet>
+          
+          {/* Desktop Sidebar Toggle */}
+          <Button 
+            variant="ghost" 
+            size="icon" 
+            className="hidden md:flex m-2"
+            onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
+          >
+            {sidebarCollapsed ? (
+              <PanelLeft className="h-5 w-5" />
+            ) : (
+              <PanelLeftClose className="h-5 w-5" />
+            )}
+          </Button>
+          
           <div className="flex-1">
             <Header />
           </div>
