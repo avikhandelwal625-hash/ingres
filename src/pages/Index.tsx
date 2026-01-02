@@ -24,7 +24,9 @@ const Index = () => {
     conversations, 
     loadMessages, 
     startNewChat,
-    conversationId 
+    conversationId,
+    deleteConversation,
+    renameConversation 
   } = useChat();
   const { t } = useLanguage();
   const scrollAreaRef = useRef<HTMLDivElement>(null);
@@ -72,6 +74,8 @@ const Index = () => {
       currentId={conversationId}
       onSelect={loadMessages}
       onNewChat={startNewChat}
+      onDelete={deleteConversation}
+      onRename={renameConversation}
     />
   );
 
