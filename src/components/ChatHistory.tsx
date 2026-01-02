@@ -21,7 +21,7 @@ export function ChatHistory({ conversations, currentId, onSelect, onNewChat }: C
   const { t } = useLanguage();
 
   return (
-    <div className="flex flex-col h-full bg-card border-r border-border">
+    <div className="flex flex-col h-full w-full bg-card border-r border-border overflow-hidden">
       <div className="p-4 border-b border-border">
         <Button 
           onClick={onNewChat}

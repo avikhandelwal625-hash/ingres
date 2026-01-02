@@ -7,28 +7,28 @@ export function Header() {
   const { t } = useLanguage();
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/80 backdrop-blur-lg">
-      <div className="container flex h-16 items-center justify-between px-4">
-        <div className="flex items-center gap-3">
-          <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-hero-gradient text-primary-foreground">
-            <Droplets className="w-5 h-5" />
+    <header className="w-full bg-background/80 backdrop-blur-lg">
+      <div className="flex h-14 items-center justify-between px-4 gap-2">
+        <div className="flex items-center gap-2 min-w-0 flex-shrink">
+          <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-hero-gradient text-primary-foreground flex-shrink-0">
+            <Droplets className="w-4 h-4" />
           </div>
-          <div>
-            <h1 className="font-display text-lg font-bold text-foreground">{t('title')}</h1>
-            <p className="text-xs text-muted-foreground">{t('subtitle')}</p>
+          <div className="min-w-0 hidden sm:block">
+            <h1 className="font-display text-sm font-bold text-foreground truncate">{t('title')}</h1>
+            <p className="text-xs text-muted-foreground truncate">{t('subtitle')}</p>
           </div>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 flex-shrink-0">
           <LanguageSelector />
           <Button
             variant="outline"
             size="sm"
-            className="gap-2"
+            className="gap-1"
             onClick={() => window.open('https://ingres.iith.ac.in/home', '_blank')}
           >
-            <span className="hidden sm:inline">{t('visitPortal')}</span>
-            <span className="sm:hidden">Portal</span>
-            <ExternalLink className="w-3.5 h-3.5" />
+            <span className="hidden lg:inline">{t('visitPortal')}</span>
+            <span className="lg:hidden">Portal</span>
+            <ExternalLink className="w-3 h-3" />
           </Button>
         </div>
       </div>
