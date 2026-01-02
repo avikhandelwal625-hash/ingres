@@ -1,4 +1,5 @@
-import { Droplets, ExternalLink } from 'lucide-react';
+import { Droplets, ExternalLink, Map } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { LanguageSelector } from './LanguageSelector';
 import { ThemeToggle } from './ThemeToggle';
@@ -6,6 +7,7 @@ import { useLanguage } from '@/hooks/useLanguage';
 
 export function Header() {
   const { t } = useLanguage();
+  const navigate = useNavigate();
 
   return (
     <header className="w-full bg-background/80 backdrop-blur-lg">
@@ -20,6 +22,14 @@ export function Header() {
           </div>
         </div>
         <div className="flex items-center gap-1 flex-shrink-0">
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => navigate('/map')}
+            title="View Interactive Map"
+          >
+            <Map className="h-4 w-4" />
+          </Button>
           <ThemeToggle />
           <LanguageSelector />
           <Button
