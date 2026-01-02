@@ -1,6 +1,7 @@
 import { Droplets, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { LanguageSelector } from './LanguageSelector';
+import { ThemeToggle } from './ThemeToggle';
 import { useLanguage } from '@/hooks/useLanguage';
 
 export function Header() {
@@ -18,7 +19,8 @@ export function Header() {
             <p className="text-xs text-muted-foreground truncate">{t('subtitle')}</p>
           </div>
         </div>
-        <div className="flex items-center gap-2 flex-shrink-0">
+        <div className="flex items-center gap-1 flex-shrink-0">
+          <ThemeToggle />
           <LanguageSelector />
           <Button
             variant="outline"
