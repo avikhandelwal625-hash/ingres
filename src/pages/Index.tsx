@@ -7,7 +7,7 @@ import { QuickActions } from '@/components/QuickActions';
 import { ChatHistory } from '@/components/ChatHistory';
 import { GroundwaterCharts } from '@/components/GroundwaterCharts';
 import IndiaMap from '@/components/IndiaMap';
-import { useChat } from '@/hooks/useChat';
+import { useChatPython as useChat } from '@/hooks/useChatPython';
 import { useLanguage } from '@/hooks/useLanguage';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Menu, BarChart3, X, Map, PanelLeft } from 'lucide-react';
