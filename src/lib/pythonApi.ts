@@ -1,6 +1,6 @@
 // Python FastAPI Backend API
 
-export const PYTHON_API_URL = import.meta.env.VITE_PYTHON_API_URL || 'http://localhost:8000';
+export const PYTHON_API_URL = import.meta.env.VITE_PYTHON_API_URL || 'http://127.0.0.1:8000';
 
 export type Message = {
   role: 'user' | 'assistant';
