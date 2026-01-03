@@ -22,6 +22,7 @@ export function Header() {
           </div>
         </div>
         <div className="flex items-center gap-1 flex-shrink-0">
+          {/* Map button hidden for now - uncomment to enable
           <Button
             variant="ghost"
             size="icon"
@@ -30,6 +31,7 @@ export function Header() {
           >
             <Map className="h-4 w-4" />
           </Button>
+          */}
           <ThemeToggle />
           <LanguageSelector />
           <Button

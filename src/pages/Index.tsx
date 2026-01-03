@@ -120,6 +120,7 @@ const Index = () => {
             <div className="max-w-4xl mx-auto px-4 py-6 space-y-4">
               {/* Toggle Buttons */}
               <div className="flex justify-end gap-2">
+                {/* Map button hidden for now - uncomment to enable
                 <Button
                   variant={showMap ? "default" : "outline"}
                   size="sm"
@@ -129,6 +130,7 @@ const Index = () => {
                   {showMap ? <X className="h-4 w-4" /> : <Map className="h-4 w-4" />}
                   {showMap ? t('hideMap') : t('viewMap')}
                 </Button>
+                */}
                 <Button
                   variant={showCharts ? "default" : "outline"}
                   size="sm"
