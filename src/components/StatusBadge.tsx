@@ -1,4 +1,5 @@
 import { cn } from '@/lib/utils';
+import { useLanguage } from '@/hooks/useLanguage';
 
 type StatusType = 'safe' | 'semi-critical' | 'critical' | 'over-exploited';
 
@@ -8,27 +9,28 @@ interface StatusBadgeProps {
   size?: 'sm' | 'md' | 'lg';
 }
 
-const statusConfig: Record<StatusType, { label: string; description: string }> = {
+const statusTranslationKeys: Record<StatusType, { labelKey: string; descKey: string }> = {
   safe: {
-    label: 'Safe',
-    description: '< 70% extraction',
+    labelKey: 'safe',
+    descKey: 'statusSafeDesc',
   },
   'semi-critical': {
-    label: 'Semi-Critical',
-    description: '70-90% extraction',
+    labelKey: 'semiCritical',
+    descKey: 'statusSemiCriticalDesc',
   },
   critical: {
-    label: 'Critical',
-    description: '90-100% extraction',
+    labelKey: 'critical',
+    descKey: 'statusCriticalDesc',
   },
   'over-exploited': {
-    label: 'Over-Exploited',
-    description: '> 100% extraction',
+    labelKey: 'overExploited',
+    descKey: 'statusOverExploitedDesc',
   },
 };
 
 export function StatusBadge({ status, showLabel = true, size = 'md' }: StatusBadgeProps) {
-  const config = statusConfig[status];
+  const { t } = useLanguage();
+  const config = statusTranslationKeys[status];
   
   return (
     <div
@@ -55,19 +57,21 @@ export function StatusBadge({ status, showLabel = true, size = 'md' }: StatusBad
           status === 'over-exploited' && 'bg-status-over-exploited'
         )}
       />
-      {showLabel && <span>{config.label}</span>}
+      {showLabel && <span>{t(config.labelKey)}</span>}
     </div>
   );
 }
 
 export function StatusLegend() {
+  const { t } = useLanguage();
+  
   return (
     <div className="flex flex-wrap gap-3 p-4 bg-card rounded-xl border border-border">
-      <h4 className="w-full text-sm font-semibold text-foreground mb-2">Groundwater Status Categories</h4>
-      {(Object.keys(statusConfig) as StatusType[]).map((status) => (
+      <h4 className="w-full text-sm font-semibold text-foreground mb-2">{t('statusCategories')}</h4>
+      {(Object.keys(statusTranslationKeys) as StatusType[]).map((status) => (
         <div key={status} className="flex items-center gap-2">
           <StatusBadge status={status} size="sm" />
-          <span className="text-xs text-muted-foreground">{statusConfig[status].description}</span>
+          <span className="text-xs text-muted-foreground">{t(statusTranslationKeys[status].descKey)}</span>
         </div>
       ))}
     </div>

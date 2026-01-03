@@ -63,6 +63,22 @@ export const translations: Record<Language, Record<string, string>> = {
     recharge_tanksPonds: 'Tanks/Ponds',
     recharge_others: 'Others',
     contribution: 'Contribution',
+    // Status descriptions
+    statusSafeDesc: '< 70% extraction',
+    statusSemiCriticalDesc: '70-90% extraction',
+    statusCriticalDesc: '90-100% extraction',
+    statusOverExploitedDesc: '> 100% extraction',
+    statusCategories: 'Groundwater Status Categories',
+    // Delete dialog
+    deleteConversation: 'Delete Conversation',
+    deleteConfirmation: 'Are you sure you want to delete this conversation? This will permanently remove the chat and all its messages. This action cannot be undone.',
+    cancel: 'Cancel',
+    delete: 'Delete',
+    untitled: 'Untitled',
+    // Tooltips
+    rename: 'Rename',
+    switchToLightMode: 'Switch to light mode',
+    switchToDarkMode: 'Switch to dark mode',
   },
   hi: {
     title: 'INGRES AI सहायक',
@@ -116,6 +132,22 @@ export const translations: Record<Language, Record<string, string>> = {
     recharge_tanksPonds: 'टैंक/तालाब',
     recharge_others: 'अन्य',
     contribution: 'योगदान',
+    // Status descriptions
+    statusSafeDesc: '< 70% निष्कर्षण',
+    statusSemiCriticalDesc: '70-90% निष्कर्षण',
+    statusCriticalDesc: '90-100% निष्कर्षण',
+    statusOverExploitedDesc: '> 100% निष्कर्षण',
+    statusCategories: 'भूजल स्थिति श्रेणियां',
+    // Delete dialog
+    deleteConversation: 'बातचीत हटाएं',
+    deleteConfirmation: 'क्या आप वाकई इस बातचीत को हटाना चाहते हैं? यह चैट और उसके सभी संदेशों को स्थायी रूप से हटा देगा। यह क्रिया पूर्ववत नहीं की जा सकती।',
+    cancel: 'रद्द करें',
+    delete: 'हटाएं',
+    untitled: 'शीर्षकहीन',
+    // Tooltips
+    rename: 'नाम बदलें',
+    switchToLightMode: 'लाइट मोड पर जाएं',
+    switchToDarkMode: 'डार्क मोड पर जाएं',
   },
   ta: {
     title: 'INGRES AI உதவியாளர்',
@@ -169,6 +201,22 @@ export const translations: Record<Language, Record<string, string>> = {
     recharge_tanksPonds: 'தொட்டிகள்/குளங்கள்',
     recharge_others: 'மற்றவை',
     contribution: 'பங்களிப்பு',
+    // Status descriptions
+    statusSafeDesc: '< 70% எடுப்பு',
+    statusSemiCriticalDesc: '70-90% எடுப்பு',
+    statusCriticalDesc: '90-100% எடுப்பு',
+    statusOverExploitedDesc: '> 100% எடுப்பு',
+    statusCategories: 'நிலத்தடி நீர் நிலை வகைகள்',
+    // Delete dialog
+    deleteConversation: 'உரையாடலை நீக்கு',
+    deleteConfirmation: 'இந்த உரையாடலை நீக்க விரும்புகிறீர்களா? இது அரட்டை மற்றும் அதன் அனைத்து செய்திகளையும் நிரந்தரமாக அகற்றும். இந்த செயலை செயல்தவிர்க்க முடியாது.',
+    cancel: 'ரத்து செய்',
+    delete: 'நீக்கு',
+    untitled: 'தலைப்பில்லாத',
+    // Tooltips
+    rename: 'மறுபெயரிடு',
+    switchToLightMode: 'ஒளி பயன்முறைக்கு மாறு',
+    switchToDarkMode: 'இருண்ட பயன்முறைக்கு மாறு',
   },
   te: {
     title: 'INGRES AI సహాయకుడు',
@@ -222,6 +270,22 @@ export const translations: Record<Language, Record<string, string>> = {
     recharge_tanksPonds: 'ట్యాంకులు/చెరువులు',
     recharge_others: 'ఇతరాలు',
     contribution: 'సహకారం',
+    // Status descriptions
+    statusSafeDesc: '< 70% వెలికితీత',
+    statusSemiCriticalDesc: '70-90% వెలికితీత',
+    statusCriticalDesc: '90-100% వెలికితీత',
+    statusOverExploitedDesc: '> 100% వెలికితీత',
+    statusCategories: 'భూగర్భజల స్థితి వర్గాలు',
+    // Delete dialog
+    deleteConversation: 'సంభాషణను తొలగించు',
+    deleteConfirmation: 'మీరు ఈ సంభాషణను తొలగించాలనుకుంటున్నారా? ఇది చాట్ మరియు దాని అన్ని సందేశాలను శాశ్వతంగా తొలగిస్తుంది. ఈ చర్య రద్దు చేయలేము.',
+    cancel: 'రద్దు చేయి',
+    delete: 'తొలగించు',
+    untitled: 'శీర్షిక లేని',
+    // Tooltips
+    rename: 'పేరు మార్చు',
+    switchToLightMode: 'లైట్ మోడ్‌కు మారండి',
+    switchToDarkMode: 'డార్క్ మోడ్‌కు మారండి',
   },
   bn: {
     title: 'INGRES AI সহায়ক',
@@ -275,6 +339,22 @@ export const translations: Record<Language, Record<string, string>> = {
     recharge_tanksPonds: 'ট্যাঙ্ক/পুকুর',
     recharge_others: 'অন্যান্য',
     contribution: 'অবদান',
+    // Status descriptions
+    statusSafeDesc: '< 70% উত্তোলন',
+    statusSemiCriticalDesc: '70-90% উত্তোলন',
+    statusCriticalDesc: '90-100% উত্তোলন',
+    statusOverExploitedDesc: '> 100% উত্তোলন',
+    statusCategories: 'ভূগর্ভস্থ জলের অবস্থা বিভাগ',
+    // Delete dialog
+    deleteConversation: 'কথোপকথন মুছুন',
+    deleteConfirmation: 'আপনি কি এই কথোপকথনটি মুছে ফেলতে চান? এটি চ্যাট এবং এর সমস্ত বার্তা স্থায়ীভাবে সরিয়ে দেবে। এই কাজটি পূর্বাবস্থায় ফেরানো যাবে না।',
+    cancel: 'বাতিল',
+    delete: 'মুছুন',
+    untitled: 'শিরোনামহীন',
+    // Tooltips
+    rename: 'নাম পরিবর্তন করুন',
+    switchToLightMode: 'লাইট মোডে যান',
+    switchToDarkMode: 'ডার্ক মোডে যান',
   },
   mr: {
     title: 'INGRES AI सहाय्यक',
@@ -328,6 +408,22 @@ export const translations: Record<Language, Record<string, string>> = {
     recharge_tanksPonds: 'टाक्या/तलाव',
     recharge_others: 'इतर',
     contribution: 'योगदान',
+    // Status descriptions
+    statusSafeDesc: '< 70% उपसा',
+    statusSemiCriticalDesc: '70-90% उपसा',
+    statusCriticalDesc: '90-100% उपसा',
+    statusOverExploitedDesc: '> 100% उपसा',
+    statusCategories: 'भूजल स्थिती श्रेणी',
+    // Delete dialog
+    deleteConversation: 'संभाषण हटवा',
+    deleteConfirmation: 'तुम्हाला खरोखर हे संभाषण हटवायचे आहे का? यामुळे चॅट आणि त्याचे सर्व संदेश कायमचे काढून टाकले जातील. ही क्रिया पूर्ववत केली जाऊ शकत नाही.',
+    cancel: 'रद्द करा',
+    delete: 'हटवा',
+    untitled: 'शीर्षकहीन',
+    // Tooltips
+    rename: 'नाव बदला',
+    switchToLightMode: 'लाइट मोडवर जा',
+    switchToDarkMode: 'डार्क मोडवर जा',
   },
   gu: {
     title: 'INGRES AI સહાયક',
@@ -381,6 +477,22 @@ export const translations: Record<Language, Record<string, string>> = {
     recharge_tanksPonds: 'ટાંકી/તળાવો',
     recharge_others: 'અન્ય',
     contribution: 'યોગદાન',
+    // Status descriptions
+    statusSafeDesc: '< 70% નિષ્કર્ષણ',
+    statusSemiCriticalDesc: '70-90% નિષ્કર્ષણ',
+    statusCriticalDesc: '90-100% નિષ્કર્ષણ',
+    statusOverExploitedDesc: '> 100% નિષ્કર્ષણ',
+    statusCategories: 'ભૂગર્ભજળ સ્થિતિ શ્રેણીઓ',
+    // Delete dialog
+    deleteConversation: 'વાતચીત કાઢી નાખો',
+    deleteConfirmation: 'શું તમે ખરેખર આ વાતચીત કાઢી નાખવા માંગો છો? આ ચેટ અને તેના તમામ સંદેશાઓને કાયમ માટે દૂર કરશે. આ ક્રિયા પૂર્વવત્ કરી શકાતી નથી.',
+    cancel: 'રદ કરો',
+    delete: 'કાઢી નાખો',
+    untitled: 'શીર્ષક વિનાનું',
+    // Tooltips
+    rename: 'નામ બદલો',
+    switchToLightMode: 'લાઇટ મોડ પર જાઓ',
+    switchToDarkMode: 'ડાર્ક મોડ પર જાઓ',
   },
 };
 

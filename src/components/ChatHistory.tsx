@@ -155,7 +155,7 @@ export function ChatHistory({
                           size="icon"
                           className="h-6 w-6"
                           onClick={(e) => handleStartEdit(conv, e)}
-                          title="Rename"
+                          title={t('rename')}
                         >
                           <Pencil className="h-3 w-3 text-muted-foreground hover:text-foreground" />
                         </Button>
@@ -164,7 +164,7 @@ export function ChatHistory({
                           size="icon"
                           className="h-6 w-6"
                           onClick={(e) => handleDeleteClick(conv, e)}
-                          title="Delete"
+                          title={t('delete')}
                         >
                           <Trash2 className="h-3 w-3 text-muted-foreground hover:text-destructive" />
                         </Button>
@@ -182,20 +182,18 @@ export function ChatHistory({
       <AlertDialog open={deleteDialogOpen} onOpenChange={setDeleteDialogOpen}>
         <AlertDialogContent>
           <AlertDialogHeader>
-            <AlertDialogTitle>Delete Conversation</AlertDialogTitle>
+            <AlertDialogTitle>{t('deleteConversation')}</AlertDialogTitle>
             <AlertDialogDescription>
-              Are you sure you want to delete this conversation? This will permanently remove the chat 
-              "{conversationToDelete?.title || 'Untitled'}" and all its messages from the database. 
-              This action cannot be undone.
+              {t('deleteConfirmation')}
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
-            <AlertDialogCancel>Cancel</AlertDialogCancel>
+            <AlertDialogCancel>{t('cancel')}</AlertDialogCancel>
             <AlertDialogAction 
               onClick={handleConfirmDelete}
               className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
             >
-              Delete
+              {t('delete')}
             </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>
