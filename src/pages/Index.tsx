@@ -127,7 +127,7 @@ const Index = () => {
                   className="gap-2"
                 >
                   {showMap ? <X className="h-4 w-4" /> : <Map className="h-4 w-4" />}
-                  {showMap ? 'Hide Map' : 'View Map'}
+                  {showMap ? t('hideMap') : t('viewMap')}
                 </Button>
                 <Button
                   variant={showCharts ? "default" : "outline"}
