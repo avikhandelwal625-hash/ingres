@@ -1,12 +1,8 @@
 import { useState, useCallback, useEffect } from 'react';
 import { 
-  streamChat, 
+  sendChatMessage,
   fetchConversations, 
-  createConversation as createConversationApi,
-  updateConversation,
-  deleteConversationApi,
   fetchMessages,
-  saveMessageApi,
   type Conversation,
 } from '@/lib/pythonApi';
 import { useToast } from '@/hooks/use-toast';
@@ -50,108 +46,55 @@ export function useChatPython() {
     }
   }, []);
 
-  // Create new conversation
-  const createConversation = useCallback(async (firstMessage: string) => {
-    const title = firstMessage.slice(0, 50) + (firstMessage.length > 50 ? '...' : '');
-    
-    try {
-      const data = await createConversationApi(title);
-      setConversationId(data.id);
-      loadConversations();
-      return data.id;
-    } catch (error) {
-      console.error('Error creating conversation:', error);
-      return null;
-    }
-  }, [loadConversations]);
-
-  // Save message to database
-  const saveMessage = useCallback(async (convId: string, role: 'user' | 'assistant', content: string) => {
-    try {
-      const data = await saveMessageApi(convId, role, content);
-      return data.id;
-    } catch (error) {
-      console.error('Error saving message:', error);
-      return null;
-    }
-  }, []);
-
   // Send message
   const sendMessage = useCallback(async (content: string) => {
     if (!content.trim() || isLoading) return;
 
     setIsLoading(true);
 
-    // Get or create conversation
-    let convId = conversationId;
-    if (!convId) {
-      convId = await createConversation(content);
-      if (!convId) {
-        setIsLoading(false);
-        toast({
-          title: 'Error',
-          description: 'Failed to create conversation',
-          variant: 'destructive',
-        });
-        return;
-      }
-    }
-
-    // Add user message
+    // Add user message to UI
     const userMsgId = crypto.randomUUID();
     const userMessage: Message = { id: userMsgId, role: 'user', content };
     setMessages(prev => [...prev, userMessage]);
-    
-    // Save user message
-    await saveMessage(convId, 'user', content);
 
     // Add placeholder assistant message
     const assistantMsgId = crypto.randomUUID();
     setMessages(prev => [...prev, { id: assistantMsgId, role: 'assistant', content: '', isStreaming: true }]);
 
-    let fullResponse = '';
+    try {
+      // Send to backend
+      const response = await sendChatMessage(
+        [...messages, userMessage].map(m => ({ role: m.role, content: m.content })),
+        conversationId
+      );
 
-    await streamChat({
-      messages: [...messages, userMessage].map(m => ({ role: m.role, content: m.content })),
-      conversationId: convId,
-      onDelta: (delta) => {
-        fullResponse += delta;
-        setMessages(prev => 
-          prev.map(m => 
-            m.id === assistantMsgId 
-              ? { ...m, content: fullResponse }
-              : m
-          )
-        );
-      },
-      onDone: async () => {
-        setMessages(prev => 
-          prev.map(m => 
-            m.id === assistantMsgId 
-              ? { ...m, isStreaming: false }
-              : m
-          )
-        );
-        
-        // Save assistant message
-        if (fullResponse && convId) {
-          await saveMessage(convId, 'assistant', fullResponse);
-        }
-        
-        setIsLoading(false);
-      },
-      onError: (error) => {
-        console.error('Chat error:', error);
-        setMessages(prev => prev.filter(m => m.id !== assistantMsgId));
-        toast({
-          title: 'Error',
-          description: error,
-          variant: 'destructive',
-        });
-        setIsLoading(false);
-      },
-    });
-  }, [messages, isLoading, conversationId, createConversation, saveMessage, toast]);
+      // Update conversation ID if new
+      if (!conversationId && response.conversation_id) {
+        setConversationId(response.conversation_id);
+        loadConversations(); // Refresh list
+      }
+
+      // Update assistant message with reply
+      setMessages(prev => 
+        prev.map(m => 
+          m.id === assistantMsgId 
+            ? { ...m, content: response.reply, isStreaming: false }
+            : m
+        )
+      );
+    } catch (error) {
+      console.error('Chat error:', error);
+      // Remove placeholder on error
+      setMessages(prev => prev.filter(m => m.id !== assistantMsgId));
+      toast({
+        title: 'Error',
+        description: error instanceof Error ? error.message : 'Failed to send message',
+        variant: 'destructive',
+      });
+    } finally {
+      setIsLoading(false);
+    }
+  }, [messages, isLoading, conversationId, loadConversations, toast]);
 
   // Start new chat
   const startNewChat = useCallback(() => {
@@ -159,50 +102,25 @@ export function useChatPython() {
     setConversationId(null);
   }, []);
 
-  // Delete conversation
+  // Delete conversation (stub - no endpoint provided)
   const deleteConversation = useCallback(async (convId: string) => {
-    try {
-      await deleteConversationApi(convId);
-      
-      // Clear current chat if we deleted it
-      if (conversationId === convId) {
-        setMessages([]);
-        setConversationId(null);
-      }
+    toast({
+      title: 'Not implemented',
+      description: 'Delete endpoint not available',
+      variant: 'destructive',
+    });
+    return false;
+  }, [toast]);
 
-      loadConversations();
-      toast({
-        title: 'Deleted',
-        description: 'Conversation deleted successfully',
-      });
-      return true;
-    } catch (error) {
-      console.error('Error deleting conversation:', error);
-      toast({
-        title: 'Error',
-        description: 'Failed to delete conversation',
-        variant: 'destructive',
-      });
-      return false;
-    }
-  }, [conversationId, loadConversations, toast]);
-
-  // Rename conversation
+  // Rename conversation (stub - no endpoint provided)
   const renameConversation = useCallback(async (convId: string, newTitle: string) => {
-    try {
-      await updateConversation(convId, newTitle);
-      loadConversations();
-      return true;
-    } catch (error) {
-      console.error('Error renaming conversation:', error);
-      toast({
-        title: 'Error',
-        description: 'Failed to rename conversation',
-        variant: 'destructive',
-      });
-      return false;
-    }
-  }, [loadConversations, toast]);
+    toast({
+      title: 'Not implemented',
+      description: 'Rename endpoint not available',
+      variant: 'destructive',
+    });
+    return false;
+  }, [toast]);
 
   // Load conversations on mount
   useEffect(() => {
