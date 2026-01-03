@@ -37,12 +37,12 @@ const stateWiseDataBase = [
   { stateKey: 'state_up', extraction: 74, safe: 80, critical: 20 },
 ];
 
-const rechargeData = [
-  { component: 'Rainfall', value: 45, fill: 'hsl(var(--primary))' },
-  { component: 'Canal Seepage', value: 18, fill: 'hsl(var(--accent))' },
-  { component: 'Return Flow', value: 22, fill: 'hsl(var(--secondary))' },
-  { component: 'Tanks/Ponds', value: 10, fill: 'hsl(var(--status-safe))' },
-  { component: 'Others', value: 5, fill: 'hsl(var(--muted))' },
+const rechargeDataBase = [
+  { componentKey: 'recharge_rainfall', value: 45, fill: 'hsl(var(--primary))' },
+  { componentKey: 'recharge_canalSeepage', value: 18, fill: 'hsl(var(--accent))' },
+  { componentKey: 'recharge_returnFlow', value: 22, fill: 'hsl(var(--secondary))' },
+  { componentKey: 'recharge_tanksPonds', value: 10, fill: 'hsl(var(--status-safe))' },
+  { componentKey: 'recharge_others', value: 5, fill: 'hsl(var(--muted))' },
 ];
 
 const yearlyTrend = [
@@ -67,6 +67,12 @@ export function GroundwaterCharts() {
   const stateWiseData = stateWiseDataBase.map(item => ({
     ...item,
     state: t(item.stateKey)
+  }));
+  
+  // Translate recharge data
+  const rechargeData = rechargeDataBase.map(item => ({
+    ...item,
+    component: t(item.componentKey)
   }));
 
   return (
@@ -190,9 +196,9 @@ export function GroundwaterCharts() {
                       border: '1px solid hsl(var(--border))',
                       borderRadius: '8px'
                     }}
-                    formatter={(value: number) => [`${value}%`, 'Contribution']}
+                    formatter={(value: number) => [`${value}%`, t('contribution')]}
                   />
-                  <Bar dataKey="value" name="Contribution %" radius={[4, 4, 0, 0]}>
+                  <Bar dataKey="value" name={`${t('contribution')} %`} radius={[4, 4, 0, 0]}>
                     {rechargeData.map((entry, index) => (
                       <Cell key={`cell-${index}`} fill={entry.fill} />
                     ))}
