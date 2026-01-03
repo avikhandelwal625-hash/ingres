@@ -26,7 +26,7 @@ export function Header() {
             variant="ghost"
             size="icon"
             onClick={() => navigate('/map')}
-            title="View Interactive Map"
+            title={t('viewMap')}
           >
             <Map className="h-4 w-4" />
           </Button>

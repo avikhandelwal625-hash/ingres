@@ -18,23 +18,23 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useLanguage } from '@/hooks/useLanguage';
 
-const statusData = [
-  { name: 'Safe', value: 4793, color: 'hsl(var(--status-safe))' },
-  { name: 'Semi-Critical', value: 736, color: 'hsl(var(--status-semi-critical))' },
-  { name: 'Critical', value: 311, color: 'hsl(var(--status-critical))' },
-  { name: 'Over-Exploited', value: 1139, color: 'hsl(var(--status-over-exploited))' },
-  { name: 'Saline', value: 110, color: 'hsl(var(--muted-foreground))' },
+const statusDataBase = [
+  { nameKey: 'safe', value: 4793, color: 'hsl(var(--status-safe))' },
+  { nameKey: 'semiCritical', value: 736, color: 'hsl(var(--status-semi-critical))' },
+  { nameKey: 'critical', value: 311, color: 'hsl(var(--status-critical))' },
+  { nameKey: 'overExploited', value: 1139, color: 'hsl(var(--status-over-exploited))' },
+  { nameKey: 'saline', value: 110, color: 'hsl(var(--muted-foreground))' },
 ];
 
-const stateWiseData = [
-  { state: 'Punjab', extraction: 165, safe: 15, critical: 85 },
-  { state: 'Rajasthan', extraction: 137, safe: 45, critical: 55 },
-  { state: 'Haryana', extraction: 133, safe: 25, critical: 75 },
-  { state: 'Tamil Nadu', extraction: 77, safe: 55, critical: 45 },
-  { state: 'Karnataka', extraction: 71, safe: 60, critical: 40 },
-  { state: 'Gujarat', extraction: 68, safe: 70, critical: 30 },
-  { state: 'Maharashtra', extraction: 56, safe: 75, critical: 25 },
-  { state: 'UP', extraction: 74, safe: 80, critical: 20 },
+const stateWiseDataBase = [
+  { stateKey: 'state_punjab', extraction: 165, safe: 15, critical: 85 },
+  { stateKey: 'state_rajasthan', extraction: 137, safe: 45, critical: 55 },
+  { stateKey: 'state_haryana', extraction: 133, safe: 25, critical: 75 },
+  { stateKey: 'state_tamilnadu', extraction: 77, safe: 55, critical: 45 },
+  { stateKey: 'state_karnataka', extraction: 71, safe: 60, critical: 40 },
+  { stateKey: 'state_gujarat', extraction: 68, safe: 70, critical: 30 },
+  { stateKey: 'state_maharashtra', extraction: 56, safe: 75, critical: 25 },
+  { stateKey: 'state_up', extraction: 74, safe: 80, critical: 20 },
 ];
 
 const rechargeData = [
@@ -56,6 +56,18 @@ const yearlyTrend = [
 export function GroundwaterCharts() {
   const { t } = useLanguage();
   const [activeTab, setActiveTab] = useState('status');
+  
+  // Translate status data
+  const statusData = statusDataBase.map(item => ({
+    ...item,
+    name: t(item.nameKey)
+  }));
+  
+  // Translate state data
+  const stateWiseData = stateWiseDataBase.map(item => ({
+    ...item,
+    state: t(item.stateKey)
+  }));
 
   return (
     <Card className="w-full">
@@ -159,7 +171,7 @@ export function GroundwaterCharts() {
                     formatter={(value: number) => [`${value}%`, '']}
                   />
                   <Legend />
-                  <Bar dataKey="extraction" name="Extraction Stage %" fill="hsl(var(--primary))" radius={[0, 4, 4, 0]} />
+                  <Bar dataKey="extraction" name={`${t('extractionStage')} %`} fill="hsl(var(--primary))" radius={[0, 4, 4, 0]} />
                 </BarChart>
               </ResponsiveContainer>
             </div>
