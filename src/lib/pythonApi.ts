@@ -62,7 +62,9 @@ export async function fetchConversations(): Promise<Conversation[]> {
     throw new Error(`Failed to fetch conversations: ${resp.status}`);
   }
 
-  return resp.json();
+  const data = await resp.json();
+  // Handle both { conversations: [...] } and [...] formats
+  return Array.isArray(data) ? data : (data.conversations || []);
 }
 
 // ============= Messages =============
@@ -77,5 +79,7 @@ export async function fetchMessages(conversationId: string): Promise<MessageReco
     throw new Error(`Failed to fetch messages: ${resp.status}`);
   }
 
-  return resp.json();
+  const data = await resp.json();
+  // Handle both { messages: [...] } and [...] formats
+  return Array.isArray(data) ? data : (data.messages || []);
 }
